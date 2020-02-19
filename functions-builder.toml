@@ -7,25 +7,26 @@ run-image = "heroku/pack:18"
 version = "0.4.0"
 
 [[buildpacks]]
-  id = "heroku/nodejs-engine-buildpack"
-  uri = "https://github.com/heroku/nodejs-engine-buildpack/releases/download/v0.3.0/nodejs-engine-buildpack-v0.3.0.tgz"
+  id = "heroku/nodejs-engine"
+  uri = "https://github.com/heroku/nodejs-engine-buildpack/releases/download/v0.4.2/nodejs-engine-buildpack-v0.4.2.tgz"
 
 [[buildpacks]]
-  id = "heroku/nodejs-npm-buildpack"
-  uri = "https://github.com/heroku/nodejs-npm-buildpack/releases/download/v0.1.2/nodejs-npm-buildpack-v0.1.2.tgz"
-
-[[buildpacks]]
-  id = "heroku/nodejs-yarn"
-  uri = "https://github.com/heroku/nodejs-yarn-buildpack/releases/download/v0.0.1/nodejs-yarn-buildpack-v0.0.1.tgz"
+  id = "heroku/nodejs-npm"
+  uri = "/Users/jesse.brown/dev/nodejs-npm-buildpack/nodejs-npm-buildpack-v0.1.4.tgz"
+  # TODO: merge https://github.com/heroku/nodejs-npm-buildpack/pull/18 and update uri above
 
 [[buildpacks]]
   id = "salesforce/nodejs-fn"
   uri = "https://github.com/forcedotcom/nodejs-sf-fx-buildpack/releases/download/v0.0.11/nodejs-sf-fx-buildpack-v0.0.11.tgz"
-  
 
 [[buildpacks]]
-  id = "heroku/node-function"
-  uri = "https://github.com/heroku/node-function-buildpack/releases/download/v0.6.2/node-function-buildpack-v0.6.2.tgz"
+  id = "heroku/evergreen-node-system-function"
+  uri = "https://github.com/heroku/evergreen-node-system-function/releases/download/v0.0.1/evergreen-node-system-function-buildpack-v0.0.1.tgz"
+  # TODO: merge https://github.com/heroku/evergreen-node-system-function/pull/2
+
+[[buildpacks]]
+  id = "io.projectriff.node"
+  uri = "https://storage.googleapis.com/projectriff/node-function-buildpack/io.projectriff.node-0.2.1.tgz"
 
 [[buildpacks]]
   id = "heroku/maven"
@@ -36,37 +37,22 @@ version = "0.4.0"
   uri = "https://github.com/heroku/heroku-buildpack-jvm-common/releases/download/v96/heroku-jvm-cnb.tgz"
 
 [[buildpacks]]
-  id = "heroku/java-function"
-  uri = "https://github.com/heroku/java-function-buildpack/releases/download/v0.3.0/java-function-buildpack-v0.3.0.tgz"
+  id = "io.projectriff.java"
+  uri = "https://storage.googleapis.com/projectriff/java-function-buildpack/io.projectriff.java-0.2.1.tgz"
+
+[[buildpacks]]
+  id = "heroku/evergreen-java-system-function"
+  uri = "https://github.com/heroku/evergreen-java-system-function/releases/download/v0.0.1/evergreen-java-system-function-buildpack-v0.0.1.tgz"
 
 [[order]]
   # node functions
   [[order.group]]
-    id = "heroku/nodejs-engine-buildpack"
-    version = "0.3.0"
+    id = "heroku/nodejs-engine"
+    version = "0.4.2"
 
   [[order.group]]
-    id = "heroku/nodejs-yarn"
-    version = "0.0.1"
-
-  [[order.group]]
-    id = "salesforce/nodejs-fn"
-    version = "0.0.10"
-    optional = true
-
-  [[order.group]]
-    id = "heroku/node-function"
-    version = "0.5.0"
-
-[[order]]
-  # node functions
-  [[order.group]]
-    id = "heroku/nodejs-engine-buildpack"
-    version = "0.3.0"
-
-  [[order.group]]
-    id = "heroku/nodejs-npm-buildpack"
-    version = "0.1.2"
+    id = "heroku/nodejs-npm"
+    version = "0.1.4"
 
   [[order.group]]
     id = "salesforce/nodejs-fn"
@@ -74,8 +60,12 @@ version = "0.4.0"
     optional = true
 
   [[order.group]]
-    id = "heroku/node-function"
-    version = "0.6.2"
+    id = "io.projectriff.node"
+    version = "0.2.1"
+
+  [[order.group]]
+    id = "heroku/evergreen-node-system-function"
+    version = "0.0.1"
 
 [[order]]
   # java functions
@@ -88,5 +78,9 @@ version = "0.4.0"
     version = "0.1"
 
   [[order.group]]
-    id = "heroku/java-function"
-    version = "0.3.0"
+    id = "io.projectriff.java"
+    version = "0.2.1"
+
+  [[order.group]]
+    id = "heroku/evergreen-java-system-function"
+    version = "0.0.1"

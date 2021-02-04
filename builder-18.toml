@@ -8,27 +8,27 @@ version = "0.10.1"
 
 [[buildpacks]]
   id = "heroku/maven"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-maven-buildpack:0.2.0"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-maven-buildpack@sha256:7bff54457286a9a36dbcaec77ab041d61c2e1a47741d459c3457e429f6d2f268"
 
 [[buildpacks]]
   id = "heroku/jvm"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-jvm-buildpack:0.1.2"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-jvm-buildpack@sha256:37483599729c5afbd747a2c8d5965347a32d134e4c5d1b9b5dadfffa81fe5014"
 
 [[buildpacks]]
   id = "heroku/java"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-java-buildpack:0.1.3"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-java-buildpack@sha256:7032d52f0612152e180503a1c8c30ab1f8155345d0035889af66adac79b6c633"
 
 [[buildpacks]]
   id = "heroku/gradle"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-gradle-buildpack:0.0.34"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-gradle-buildpack@sha256:7163f393470de8255fe03e06d55d3ae7bf59bf683f4ff2651ed92b6538eed0ad"
 
 [[buildpacks]]
   id = "heroku/scala"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-scala-buildpack:0.0.88"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-scala-buildpack@sha256:7a58fd9774925a6e23ce638cc4c7b57fdb9a14092632bc00c10081bb226f19b3"
 
 [[buildpacks]]
   id = "heroku/java-function"
-  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-java-function-buildpack:0.2.1"
+  uri = "docker://public.ecr.aws/r2f9u0w4/heroku-java-function-buildpack@sha256:42dfacaba0426856412c4c0ac68516ddfb58f3fbaa4ba00b79e6d5ca0cbe26a1"
 
 [[buildpacks]]
   id = "heroku/ruby"
@@ -40,15 +40,15 @@ version = "0.10.1"
 
 [[buildpacks]]
   id = "heroku/python"
-  uri = "https://cnb-shim.herokuapp.com/v1/heroku/python?version=0.3&name=Python"
+  uri = "https://cnb-shim.herokuapp.com/v1/heroku/python?version=0.3.1&name=Python"
 
 [[buildpacks]]
   id = "heroku/php"
-  uri = "https://cnb-shim.herokuapp.com/v1/heroku/php?version=0.3&name=PHP"
+  uri = "https://cnb-shim.herokuapp.com/v1/heroku/php?version=0.3.1&name=PHP"
 
 [[buildpacks]]
   id = "heroku/go"
-  uri = "https://cnb-shim.herokuapp.com/v1/heroku/go?version=0.3&name=Go"
+  uri = "https://cnb-shim.herokuapp.com/v1/heroku/go?version=0.3.1&name=Go"
 
 [[buildpacks]]
   id = "heroku/nodejs-engine"
@@ -89,51 +89,64 @@ version = "0.10.1"
 [[order]]
   [[order.group]]
     id = "heroku/ruby"
+    version = "0.0.1"
 
   [[order.group]]
     id = "heroku/procfile"
+    version = "0.6.1"
     optional = true
 
 [[order]]
   [[order.group]]
     id = "heroku/python"
+    version = "0.3.1"
 
   [[order.group]]
     id = "heroku/procfile"
+    version = "0.6.1"
     optional = true
 
 [[order]]
   [[order.group]]
-    id = "heroku/java"
-
-[[order]]
-  [[order.group]]
     id = "heroku/scala"
+    version = "0.0.88"
 
   [[order.group]]
     id = "heroku/procfile"
+    version = "0.6.1"
     optional = true
 
 [[order]]
   [[order.group]]
     id = "heroku/php"
+    version = "0.3.1"
 
   [[order.group]]
     id = "heroku/procfile"
+    version = "0.6.1"
     optional = true
 
 [[order]]
   [[order.group]]
     id = "heroku/go"
+    version = "0.3.1"
 
   [[order.group]]
     id = "heroku/procfile"
+    version = "0.6.1"
     optional = true
 
 [[order]]
   [[order.group]]
     id = "evergreen/fn"
+    version = "0.3.0"
 
 [[order]]
   [[order.group]]
     id = "heroku/nodejs"
+    version = "0.2.0"
+
+[[order]]
+  [[order.group]]
+    id = "heroku/java"
+    version = "0.3.1"
